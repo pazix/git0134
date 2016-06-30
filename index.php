@@ -20,6 +20,8 @@ $file= fopen("texte.log", "a");
 fwrite($file, date("Y-m-d H:i:s").": le script a été ouvert\r\n");
 fclose($file);
 // fonctions équivalentes
-echo file_get_contents("texte.log");
+$content = file_get_contents("texte.log");
+$content .= date("Y-m-d H:i:s").": FCP le script a été ouvert\r\n";
+file_put_contents("texte.log", $content);
 
 ?>
